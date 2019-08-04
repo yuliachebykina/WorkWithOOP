@@ -1,6 +1,6 @@
 package info.sjd.model;
 
-public class Square extends AbstractShape{
+public class Square extends AbstractShape implements Shape {
 
     private double side;
 

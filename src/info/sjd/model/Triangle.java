@@ -1,10 +1,9 @@
 package info.sjd.model;
 
-public class Triangle extends AbstractShape {
+public class Triangle extends AbstractShape implements Shape{
 
     private double base;
     private double height;
-
 
     public double getBase() {
         return base;
@@ -20,6 +19,14 @@ public class Triangle extends AbstractShape {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    public Triangle() {
     }
 
     @Override

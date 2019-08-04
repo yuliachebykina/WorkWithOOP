@@ -2,38 +2,32 @@ package info.sjd;
 
 import info.sjd.model.Circle;
 import info.sjd.model.Square;
-import info.sjd.model.Teacher;
 import info.sjd.model.Triangle;
+import info.sjd.model.Shape;
+
+import java.util.logging.Logger;
+
 
 public class ApplicationRunner {
 
+    private static Logger logger = Logger.getLogger(ApplicationRunner.class.getName());
+
     public static void main(String[] args) {
-        // Circle circle = new Circle();
-  //      circle.radius = 30.0;
-  //      circle.pi = 3.14;
-  //      System.out.println("1. Radius of circle is " + circle.radius);
-  //      System.out.println("Area of circle is "+ circle.getArea());
 
+        Shape square = new Square(20);
+        Shape circle = new Circle(10);
+        Shape triangle = new Triangle(10,20);
 
-  // Square square = new Square();
-  //      square.side = 10.0;
- //       System.out.println("2. Side of square is " + square.side);
-  //      System.out.println("Area of square is " + square.getArea());
+        Shape maxShape = square;
 
+        if (maxShape.getArea() < circle.getArea()){
+            maxShape = circle;
+        }
+        if (maxShape.getArea() < triangle.getArea()){
+            maxShape = triangle;
+        }
 
-        Triangle triangle = new Triangle();
-        triangle.setBase(10);
-        triangle.setHeight(15);
-
-        System.out.println(triangle.toString());
-  //      System.out.println("3. Base of triangle is " + triangle.base + " and height of triangle is " + triangle.height);
-  //      System.out.println("Area of triangle is " + triangle.getArea());
-        //MyTestClass myTestClass = new MyTestClass();
-
-
-       // Teacher teacher = new Teacher();
-       // teacher.setLogin('ignatenko');
+        logger.info("Max shape has area " + maxShape.getArea() + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
 
     }
-
 }

@@ -1,6 +1,6 @@
 package info.sjd.model;
 
-public class Circle extends AbstractShape{
+public class Circle extends AbstractShape implements Shape{
 
     private double radius;
 
