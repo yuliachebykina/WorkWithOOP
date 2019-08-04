@@ -1,12 +1,27 @@
 package info.sjd.model;
 
-public class Circle {
+public class Circle extends AbstractShape{
 
-    public double radius;
-    public double pi;
+    private double radius;
 
-    public double getArea () {
-        double area = pi*(radius*radius);
-        return area;
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public Circle() {
+    }
+
+    @Override
+    public double getArea() {
+        return radius * radius * Math.PI;
     }
 }
+

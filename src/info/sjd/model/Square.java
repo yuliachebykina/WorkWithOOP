@@ -1,11 +1,27 @@
 package info.sjd.model;
 
-public class Square {
+public class Square extends AbstractShape{
 
-    public double side;
-    public double getArea (){
-        double area = side*side;
-        return area;
+    private double side;
+
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public Square() {
+    }
+
+    @Override
+    public double getArea() {
+        return side * side;
     }
 }
 
