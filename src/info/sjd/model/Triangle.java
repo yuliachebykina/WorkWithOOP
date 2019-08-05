@@ -1,6 +1,10 @@
 package info.sjd.model;
 
+import java.util.logging.Logger;
+
 public class Triangle extends AbstractShape implements Shape{
+
+    private static Logger logger = Logger.getLogger(Triangle.class.getName());
 
     private double base;
     private double height;
@@ -34,8 +38,8 @@ public class Triangle extends AbstractShape implements Shape{
         return (base*height)/2;
     }
 
-    @Override
-    public String toString() {
-        return "triangle with base: " + base + " , height:" + height;
+
+    public void getInfo() {
+        logger.info("triangle with base: " + base + " , height:" + height);
     }
 }
