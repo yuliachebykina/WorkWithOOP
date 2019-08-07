@@ -1,6 +1,6 @@
 package info.sjd.model;
 
-public abstract class AbstractShape {
+public abstract class AbstractShape implements Shape, Comparable<Shape> {
 
     private String className = "Abstract shape";
     public abstract double getArea () ;

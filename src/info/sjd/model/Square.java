@@ -1,6 +1,6 @@
 package info.sjd.model;
 
-public class Square extends AbstractShape implements Shape {
+public class Square extends AbstractShape{
 
     private double side;
 
@@ -22,6 +22,11 @@ public class Square extends AbstractShape implements Shape {
     @Override
     public double getArea() {
         return side * side;
+    }
+
+    @Override
+    public int compareTo(Shape shape) {
+        return 0;
     }
 }
 

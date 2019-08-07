@@ -1,6 +1,6 @@
 package info.sjd.model;
 
-public class Circle extends AbstractShape implements Shape{
+public class Circle extends AbstractShape{
 
     private double radius;
 
@@ -22,6 +22,17 @@ public class Circle extends AbstractShape implements Shape{
     @Override
     public double getArea() {
         return radius * radius * Math.PI;
+    }
+
+    @Override
+    public int compareTo(Shape shape) {
+        if (this.getArea() < shape.getArea()){
+            return -1;
+        }
+        if (this.getArea() > shape.getArea()){
+            return +1;
+        }
+        return 0;
     }
 }
 
