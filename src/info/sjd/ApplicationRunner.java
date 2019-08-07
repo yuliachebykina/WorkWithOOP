@@ -6,6 +6,8 @@ import info.sjd.model.Triangle;
 import info.sjd.model.Shape;
 import java.util.logging.Logger;
 
+
+
 public class ApplicationRunner {
 
     private static Logger logger = Logger.getLogger(ApplicationRunner.class.getName());
@@ -33,10 +35,44 @@ public class ApplicationRunner {
         Shape maxShape = shapes[0];
 
         for (int i = 0; i < shapes.length; i++) {
-            if (maxShape.getArea() < shapes[i].getArea()){
+            if (maxShape.getArea() < shapes[i].getArea()) {
                 maxShape = shapes[i];
             }
-            logger.info("Max shape has area " + maxShape.getArea() + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+
         }
+        logger.info("Max shape has area " + maxShape.getArea() + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+
+        maxShape = shapes[0];
+        for (Shape shape : shapes) {
+            if (maxShape.getArea() < shape.getArea()) {
+                maxShape = shape;
+            }
+        }
+        logger.info("Max shape has area " + maxShape.getArea() + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+
+        maxShape = shapes[0];
+        int i = 0;
+        while (i < shapes.length){
+            if (maxShape.getArea() < shapes[i].getArea()) {
+                maxShape = shapes[i];
+            }
+            i++;
+        }
+
+//        maxShape = shapes[0];
+//        int i = 0;
+//        do {
+//            if (maxShape.getArea() < shapes[i].getArea()) {
+//               maxShape = shapes[i];
+//            }
+//            i++;
+//        } while (i < shapes.length);
+
     }
 }
+
+
+
+
+
+
