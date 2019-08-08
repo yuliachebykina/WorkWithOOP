@@ -4,11 +4,11 @@ import info.sjd.model.Circle;
 import info.sjd.model.Shape;
 import info.sjd.model.Square;
 import info.sjd.model.Triangle;
-import java.util.PriorityQueue;
-import java.util.Queue;
+
+import java.util.*;
 import java.util.logging.Logger;
 
-public class CollectionRunner {
+public class CollectionRunner  {
 
     private static Logger logger = Logger.getLogger(CollectionRunner.class.getName());
 
@@ -21,7 +21,6 @@ public class CollectionRunner {
         Shape square5 = new Square(50);
         Shape circle = new Circle(10000);
         Shape triangle = new Triangle(10,10);
-
 
 //        Queue
 
@@ -48,8 +47,43 @@ public class CollectionRunner {
 
 //        Set
 
+        Set<Shape> shapeSet = new HashSet(shapeQueue);
+        logger.info("Set has size " + shapeSet.size());
+
 
 //        List
 
+        List<Shape> shapeList = new LinkedList<>(shapeQueue);
+        logger.info("List has size " + shapeList.size());
+
+        Shape maxShape = getMaxShape(shapeList);
+        Shape minShape = getMinShape(shapeList);
+
+    }
+
+    static Shape getMinShape(List<Shape> shapeList) {
+        if (shapeList.isEmpty()){
+            return null;
+        }
+        Shape minShape = shapeList.get(0);
+        for (Shape shape :shapeList) {
+            if (minShape.getArea() > shape.getArea()){
+                minShape = shape;
+            }
+        }
+        return minShape;
+    }
+
+    static Shape getMaxShape(List<Shape> shapeList) {
+        if (shapeList.isEmpty()){
+            return null;
+        }
+        Shape maxShape = shapeList.get(0);
+        for (Shape shape :shapeList) {
+            if (maxShape.getArea() < shape.getArea()){
+                maxShape = shape;
+            }
+        }
+        return maxShape;
     }
 }
